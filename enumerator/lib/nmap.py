@@ -24,13 +24,13 @@ import delegator
 from .process_manager import ProcessManager
 
 PROCESSES = [{
-    'command': 'nmap -Pn %(scan_mode)s -sS -oN %(output_dir)s/%(host)s-tcp-standard.txt -oG %(output_dir)s/%(host)s-tcp-greppable.txt %(host)s',
-    'normal': '-T4 -p- -sV',
-    'stealth': '-T2 -sV',
+    'command': 'nmap -Pn %(scan_mode)s -sS -sV -oN %(output_dir)s/%(host)s-tcp-standard.txt -oG %(output_dir)s/%(host)s-tcp-greppable.txt %(host)s',
+    'normal': '-T4 -p-',
+    'stealth': '-T2',
 }, {
-    'command': 'nmap -Pn %(scan_mode)s -sU --open -oN %(output_dir)s/%(host)s-udp-standard.txt -oG %(output_dir)s/%(host)s-udp-greppable.txt %(host)s',
-    'normal': '-T4 --top-ports 100 -sV',
-    'stealth': '-T2 --top-ports 10 -sV',
+    'command': 'nmap -Pn %(scan_mode)s -sU -sV --open -oN %(output_dir)s/%(host)s-udp-standard.txt -oG %(output_dir)s/%(host)s-udp-greppable.txt %(host)s',
+    'normal': '-T4 --top-ports 100',
+    'stealth': '-T2 --top-ports 10',
 }]
 
 # Refined regex pattern for greppable nmap output.
