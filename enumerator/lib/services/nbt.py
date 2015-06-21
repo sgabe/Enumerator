@@ -33,9 +33,12 @@ class NbtEnumeration(GenericService, ProcessManager):
         key:value pairs of service-related data.
         """
 
+        ip = service_parameters.get('ip')
+
+        print '   [-] enumerating NBT service on host %s' % ip
         for process in self.PROCESSES:
             self.start_processes(process.get('command'), params={
-                'host': service_parameters.get('ip'),
+                'host': ip,
                 'output_dir': directory,
                 'scan_mode': process.get(config.mode),
             }, display_exception=False)
