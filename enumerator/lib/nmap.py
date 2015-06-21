@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """This module is the first
-step in gathering initial 
-service enumeration data from 
+step in gathering initial
+service enumeration data from
 a list of hosts. It initializes
 the scanning commands and parses
 the scan results. The scan results
-are then passed to the delegator 
-module which determines what enumerator 
+are then passed to the delegator
+module which determines what enumerator
 should do next.
 
 @author: Steve Coward (steve<at>sugarstack.io)

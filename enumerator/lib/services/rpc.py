@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-""" 
-The Rpc Bind module performs rpcbind-related 
+"""
+The Rpc Bind module performs rpcbind-related
 enumeration tasks.
 
 @author: Erik Dominguez(maleus<at>overflowsecurity.com)
@@ -23,10 +23,10 @@ class RpcEnumeration(GenericService, ProcessManager):
 
     def scan(self, directory, service_parameters):
         """Iterates over PROCESSES and builds
-        the specific parameters required for 
+        the specific parameters required for
         command line execution of each process.
 
-        @param directory: Directory path where 
+        @param directory: Directory path where
         final command output will go.
 
         @param service_parameters: Dictionary with
@@ -40,7 +40,7 @@ class RpcEnumeration(GenericService, ProcessManager):
             }, display_exception=False)
 
 if __name__ == '__main__':
-    """For testing purposes, this 
+    """For testing purposes, this
     module can be executed as a script.
     Use the following syntax from the root
     directory of enumerator:

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-""" 
-The SSH module performs ssh-related 
+"""
+The SSH module performs ssh-related
 enumeration tasks.
 
 @author: Steve Coward (steve<at>sugarstack.io)
@@ -29,10 +29,10 @@ class SshEnumeration(GenericService, ProcessManager):
 
     def scan(self, directory, service_parameters):
         """Iterates over PROCESSES and builds
-        the specific parameters required for 
+        the specific parameters required for
         command line execution of each process.
 
-        @param directory: Directory path where 
+        @param directory: Directory path where
         final command output will go.
 
         @param service_parameters: Dictionary with
@@ -49,7 +49,7 @@ class SshEnumeration(GenericService, ProcessManager):
             }, display_exception=False)
 
 if __name__ == '__main__':
-    """For testing purposes, this 
+    """For testing purposes, this
     module can be executed as a script.
     Use the following syntax from the root
     directory of enumerator:
