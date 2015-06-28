@@ -26,7 +26,7 @@ Available Service Modules
 ----
 
 - FTP (hydra ftp login enumeration, nmap ftp NSE scripts)
-- HTTP (nikto scan, dirb directory enumeration)
+- HTTP (nikto scan, dirb directory enumeration, nmap http NSE scripts)
 - Netbios (enum4linux scan)
 - RPC (showmount output)
 - SSH (hydra ssh login enumeration, nmap ssh NSE ssh-hostkey enumeration)

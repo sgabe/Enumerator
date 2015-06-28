@@ -15,6 +15,12 @@ from ..generic_service import GenericService
 class HttpEnumeration(GenericService, ProcessManager):
     SERVICE_DEFINITION = 'service:http,-proxy or port:8081'
     PROCESSES = [{
+        'command': 'nmap -sV -Pn -p %(port)s %(scan_mode)s \
+            --script=http-title,http-favicon,http-headers,http-methods,http-php-version,http-enum,http-robots.txt,http-shellshock \
+            -oN %(output_dir)s/%(host)s-http-%(port)s-standard.txt %(host)s',
+        'normal': '-T4',
+        'stealth': '-T2',
+    }, {
         'command': 'nikto -F txt %(scan_mode)s -o %(output_dir)s/%(host)s-http-%(port)s-nikto.txt -h %(host)s -p %(port)s',
         'normal': '',
         'stealth': '-Tuning 1 2',
