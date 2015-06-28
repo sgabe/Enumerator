@@ -60,7 +60,7 @@ if __name__ == '__main__':
     Use the following syntax from the root
     directory of enumerator:
 
-    python -m lib.http.http <ip> <port> <output directory>
+    python -m lib.services.http <ip> <port> <output directory>
     """
     http = HttpEnumeration()
     http.scan(sys.argv[3], dict(ip=sys.argv[1], port=sys.argv[2]))

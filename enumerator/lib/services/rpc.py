@@ -48,7 +48,7 @@ if __name__ == '__main__':
     Use the following syntax from the root
     directory of enumerator:
 
-    python -m lib.rpc.rpc <ip> <output directory>
+    python -m lib.services.rpc <ip> <output directory>
     """
     rpc = RpcEnumeration()
     rpc.scan(sys.argv[2], dict(ip=sys.argv[1]))

@@ -49,7 +49,7 @@ if __name__ == '__main__':
     Use the following syntax from the root
     directory of enumerator:
 
-    python -m lib.nbt.nbt <ip> <output directory>
+    python -m lib.services.nbt <ip> <output directory>
     """
     nbt = NbtEnumeration()
     nbt.scan(sys.argv[2], dict(ip=sys.argv[1]))

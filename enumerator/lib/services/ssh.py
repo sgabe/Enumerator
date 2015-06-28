@@ -58,7 +58,7 @@ if __name__ == '__main__':
     Use the following syntax from the root
     directory of enumerator:
 
-    python -m lib.ssh.ssh <ip> <port> <output directory>
+    python -m lib.services.ssh <ip> <port> <output directory>
     """
     ssh = SshEnumeration()
     ssh.scan(sys.argv[3], dict(ip=sys.argv[1], port=sys.argv[2]))

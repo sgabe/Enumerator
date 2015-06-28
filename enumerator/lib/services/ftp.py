@@ -57,7 +57,7 @@ if __name__ == '__main__':
     Use the following syntax from the root
     directory of enumerator:
 
-    python -m lib.ftp.ftp <ip> <port> <output directory>
+    python -m lib.services.ftp <ip> <port> <output directory>
     """
     ftp = FtpEnumeration()
     ftp.scan(sys.argv[3], dict(ip=sys.argv[1], port=sys.argv[2]))
