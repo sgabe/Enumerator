@@ -12,13 +12,16 @@ enumerator is a tool built to assist in automating the often tedious
 task of enumerating a target or list of targets during a penetration
 test.
 
-enumerator is built around the Kali Linux distro. To use this on other
-Linux distros, please ensure the following tools are installed:
+Before using, please ensure that the following tools are installed:
 
 -  nmap
 -  nikto, dirb (http enumeration)
 -  hydra (ftp enumeration)
 -  enum4linux (netbios enumeration)
+-  testssl.sh (ssl enumeration)
+-  smtp-user-enum (smtp enumeration)
+-  rdp-sec-check.pl (rdp enumeration)
+-  onesixtyone, snmpwalk, snmpcheck (snmp enumeration)
 
 **Windows is NOT supported at this time.**
 
@@ -31,6 +34,13 @@ Available Service Modules
 -  RPC (showmount output)
 -  SSH (hydra ssh login enumeration, nmap ssh NSE ssh-hostkey
    enumeration)
+-  MySQL (nmap mysql NSE scripts)
+-  RDP (rdp-sec-check.pl, nmap rdp NSE encryption enumeration)
+-  SMB (nmap smb NSE scripts)
+-  SMTP (smtp-user-enum, nmap smtp NSE user enumeration)
+-  SNMP (onesixtyone, snmpwalk, snmpcheck, nmap snmp NSE scripts)
+-  SSL (testssl.sh, nmap ssl NSE scripts)
+-  VNC (nmap vnc NSE scripts)
 
 Changelog
 ---------
@@ -138,7 +148,7 @@ replacing names and input parameters as needed:
 
 .. code:: sh
 
-    (venv) $ python -m enumerator.lib.<service>.<service> <ip> <port> <output directory>
+    (venv) $ python -m enumerator.lib.services.<service> <ip> <port> <output directory>
 
 Updating an existing service module:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

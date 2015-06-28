@@ -4,17 +4,21 @@ enumerator
 &nbsp;
 #### Contributors:
 
-- Erik Dominguez (IRC: Maleus | Twitter: @Maleus21) (original concept and script author) - http://overflowsecurity.com 
+- Erik Dominguez (IRC: Maleus | Twitter: @Maleus21) (original concept and script author) - http://overflowsecurity.com
 - Steve Coward (IRC: felux | Twitter: @sugarstackio) - http://sugarstack.io
 
 enumerator is a tool built to assist in automating the often tedious task of enumerating a target or list of targets during a penetration test.
 
-enumerator is built around the Kali Linux distro. To use this on other Linux distros, please ensure the following tools are installed:
+Before using, please ensure that the following tools are installed:
 
   - nmap
   - nikto, dirb (http enumeration)
   - hydra (ftp enumeration)
   - enum4linux (netbios enumeration)
+  - testssl.sh (ssl enumeration)
+  - smtp-user-enum (smtp enumeration)
+  - rdp-sec-check.pl (rdp enumeration)
+  - onesixtyone, snmpwalk, snmpcheck (snmp enumeration)
 
 **Windows is NOT supported at this time.**
 
@@ -26,6 +30,13 @@ Available Service Modules
 - Netbios (enum4linux scan)
 - RPC (showmount output)
 - SSH (hydra ssh login enumeration, nmap ssh NSE ssh-hostkey enumeration)
+- MySQL (nmap mysql NSE scripts)
+- RDP (rdp-sec-check.pl, nmap rdp NSE encryption enumeration)
+- SMB (nmap smb NSE scripts)
+- SMTP (smtp-user-enum, nmap smtp NSE user enumeration)
+- SNMP (onesixtyone, snmpwalk, snmpcheck, nmap snmp NSE scripts)
+- SSL (testssl.sh, nmap ssl NSE scripts)
+- VNC (nmap vnc NSE scripts)
 
 Changelog
 ----
@@ -72,7 +83,7 @@ To run, enumerator takes one of two parameters; either a file path to a text fil
 (venv) $ enumerator -s 10.1.1.215
 ```
 
-enumerator will then asynchronously begin scanning using nmap. Once nmap finishes, the nmap results are parsed and passed to a system which, based upon a simple set of rules, delegates further service-level enumeration to service-specific modules found in ``lib/``. Each service module defines specific enumeration applications to be run, and will run each process against the target, writing any results to file for review. 
+enumerator will then asynchronously begin scanning using nmap. Once nmap finishes, the nmap results are parsed and passed to a system which, based upon a simple set of rules, delegates further service-level enumeration to service-specific modules found in ``lib/``. Each service module defines specific enumeration applications to be run, and will run each process against the target, writing any results to file for review.
 
 Currently, enumerator output is very minimal, so it's safe to say that when the enumerator script finishes, all hosts have been thoroughly scanned. Future versions of enumerator will have better in-time
 reporting of enumeration progress. Results are saved in ``results/``, and each host will have their own folder, within which all enumeration process output is saved for review once enumerator completes.
@@ -96,7 +107,7 @@ enumerator is designed to be (relatively) easily extended for additional service
 In order to test a newly created service module, it is much easier to test by invoking the module directly as opposed to running enumerator. Make sure that your new service module follows the same syntax as existing module scripts at the very bottom of the script. Update those calls to match the syntax required for your new service module. To run, use the following syntax from the root directory of enumerator, replacing names and input parameters as needed:
 
 ```sh
-(venv) $ python -m enumerator.lib.<service>.<service> <ip> <port> <output directory>
+(venv) $ python -m enumerator.lib.services.<service> <ip> <port> <output directory>
 ```
 
 #### Updating an existing service module:
