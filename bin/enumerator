@@ -15,6 +15,10 @@ test.
             - nikto, dirb (http enumeration)
             - hydra (ftp enumeration)
             - enum4linux (netbios enumeration)
+            - testssl (ssl enumeration)
+            - smtp-user-enum (smtp enumeration)
+            - rdp-sec-check (rdp enumeration)
+            - onesixtyone, snmpwalk, snmpcheck (snmp enumeration)
 """
 import argparse
 import sys
@@ -37,7 +41,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='This is intended to simplify the common enumeration \
         actions taken during a pentest engagement. The only parameter required is a path to a list of \
         host IP addresses. nmap processes are then kicked off which in turn intelligently kick off ftp \
-        scanning (anonymous & hydra), enum4linux, dirb or nikto processes depending on nmap service \
+        scanning (anonymous & hydra), enum4linux, http scanning (dirb & nikto), testssl, smtp-user-enum, \
+        rdp-sec-check and snmp scanning (onesixtyone & snmpwalk & snmpcheck) depending on nmap service \
         enumeration output. All output is organized and saved to local folders named by IP address.')
 
     group = parser.add_mutually_exclusive_group(required=True)
