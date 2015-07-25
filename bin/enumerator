@@ -24,6 +24,16 @@ from os.path import expanduser
 from enumerator.lib import nmap, config
 
 if __name__ == '__main__':
+    banner='''
+         ___                             _
+        | __|_ _ _  _ _ __  ___ _ _ __ _| |_ ___ _ _
+        | _|| ' \ || | '  \/ -_) '_/ _` |  _/ _ \ '_|
+        |___|_||_\_,_|_|_|_\___|_| \__,_|\__\___/_|
+
+  automated service enumeration and software fingerprinting
+    '''
+    print banner
+
     parser = argparse.ArgumentParser(description='This is intended to simplify the common enumeration \
         actions taken during a pentest engagement. The only parameter required is a path to a list of \
         host IP addresses. nmap processes are then kicked off which in turn intelligently kick off ftp \
