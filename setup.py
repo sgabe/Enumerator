@@ -10,7 +10,7 @@ setup(
     scripts=['bin/enumerator'],
     packages=['enumerator', 'enumerator.static', 'enumerator.lib', 'enumerator.lib.services'],
     package_data={
-        '': ['*.txt'],
+        '': ['*.txt', 'config.ini'],
     },
     url='http://pypi.python.org/pypi/enumerator/',
     license='LICENSE.txt',
