@@ -100,7 +100,7 @@ def scan(args):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    print '   [-] nmap: running TCP & UDP scans for host: %s' % ip
+    print '[+] running TCP & UDP scans for host %s' % ip
     pm = ProcessManager()
     for process in PROCESSES:
         pm.start_processes(process.get('command'), params={

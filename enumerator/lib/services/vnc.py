@@ -37,7 +37,7 @@ class VncEnumeration(GenericService, ProcessManager):
         ip = service_parameters.get('ip')
         port = service_parameters.get('port')
 
-        print '   [-] enumerating VNC service on host %s' % ip
+        print '[+] enumerating VNC service on host %s port %s' % (ip, port)
         for process in self.PROCESSES:
             self.start_processes(process.get('command'), params={
                 'host': ip,

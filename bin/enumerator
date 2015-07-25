@@ -77,7 +77,7 @@ if __name__ == '__main__':
     # Set the scan mode config option.
     config.mode = args.mode
 
-    print '[+] IP list parsed, sending hosts to nmap...'
+    print '[*] IP list parsed, sending hosts to nmap...'
     pool = multiprocessing.Pool(
         multiprocessing.cpu_count() * 2, maxtasksperchild=2)
     pool.map_async(nmap.scan, [(ip, results_dir)

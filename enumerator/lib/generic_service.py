@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""GenericService encapsulates any 
+"""GenericService encapsulates any
 methods which are common across all
 service modules.
 

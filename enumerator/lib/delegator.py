@@ -2,7 +2,7 @@
 """The delegator module
 receives nmap scan result data
 and, based on a set of rules, will
-delegate more service-specific 
+delegate more service-specific
 enumeration.
 
 @author: Steve Coward (steve<at>sugarstack.io)
@@ -12,7 +12,7 @@ from .services import service_modules
 
 
 def receive_service_data(sender=None, **flags):
-    """Receive data either directly (not implemented) or via signal. Delegate 
+    """Receive data either directly (not implemented) or via signal. Delegate
     service enumeration depending on reported services.
 
     @param sender: Name value of where the signal was sent from (default: None)

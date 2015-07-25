@@ -35,7 +35,7 @@ class RpcEnumeration(GenericService, ProcessManager):
 
         ip = service_parameters.get('ip')
 
-        print '   [-] enumerating RPC service on host %s' % ip
+        print '[+] enumerating RPC service on host %s' % ip
         for process in self.PROCESSES:
             self.start_processes(process.get('command'), params={
                 'host': ip,
