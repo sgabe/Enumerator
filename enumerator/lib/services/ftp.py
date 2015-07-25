@@ -16,8 +16,9 @@ class FtpEnumeration(GenericService, ProcessManager):
     SERVICE_DEFINITION = 'service:ftp'
     PROCESSES = [{
         'command': 'nmap -Pn -p %(port)s %(scan_mode)s \
+            --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221 \
             -oN %(output_dir)s/%(host)s-ftp-%(port)s-standard.txt %(host)s',
-        'normal': '-T4 --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221',
+        'normal': '-T4',
         'stealth': '-T2',
     }, {
         'command': 'hydra -L %(static_path)s/user-password-%(scan_mode)s.txt -P %(static_path)s/user-password-%(scan_mode)s.txt \

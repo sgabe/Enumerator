@@ -17,8 +17,9 @@ class SshEnumeration(GenericService, ProcessManager):
     SERVICE_DEFINITION = 'service:ssh'
     PROCESSES = [{
         'command': 'nmap -Pn -p %(port)s %(scan_mode)s \
+            --script=ssh-hostkey \
             -oN %(output_dir)s/%(host)s-ssh-%(port)s-standard.txt %(host)s',
-        'normal': '-T4 --script=ssh-hostkey',
+        'normal': '-T4',
         'stealth': '-T2'
     }, {
         'command': 'hydra -L %(static_path)s/user-password-%(scan_mode)s.txt -P %(static_path)s/user-password-%(scan_mode)s.txt \
