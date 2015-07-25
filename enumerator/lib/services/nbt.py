@@ -43,6 +43,31 @@ class NbtEnumeration(GenericService, ProcessManager):
                 'scan_mode': process.get(config.mode),
             }, display_exception=False)
 
+    def is_valid_service(self, attributes, services):
+        """Returns True or False if the attributes
+        of a service record match the definition of
+        a service.
+
+        @param attributes: Dict value of a scanned service
+        (service,port,state).
+
+        @param services: List of dict values of all scanned services
+        (service,port,state).
+        """
+        service = attributes.get('service')
+        port = attributes.get('port')
+        state = attributes.get('state')
+
+        if state != 'open':
+            return False
+
+        # Prevent duplicate execution
+        if port == '445' and list((s for s in services if (s['port'] == '139') and (s['state'] == 'open'))):
+            return False
+
+        # The keys in rule will map to service, port and status set above.
+        return eval(self.compiled_service_definition)
+
 if __name__ == '__main__':
     """For testing purposes, this
     module can be executed as a script.
