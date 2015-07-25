@@ -48,12 +48,15 @@ class GenericService(object):
 
         return ' and '.join(rule).replace('and or', 'or')
 
-    def is_valid_service(self, attributes):
+    def is_valid_service(self, attributes, services):
         """Returns True or False if the attributes
         of a service record match the definition of
         a service.
 
         @param attributes: Dict value of a scanned service
+        (service,port,state).
+
+        @param services: List of dict values of all scanned services
         (service,port,state).
         """
         service = attributes.get('service')

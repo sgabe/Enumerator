@@ -28,7 +28,7 @@ def receive_service_data(sender=None, **flags):
     for tcp_service in tcp_services:
         service, port = tcp_service.get('service'), tcp_service.get('port')
         for module in service_modules:
-            if module.is_valid_service(tcp_service):
+            if module.is_valid_service(tcp_service, tcp_services):
                 module.scan(working_directory, dict(ip=ip, port=port))
 
 if __name__ == '__main__':
