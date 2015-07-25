@@ -21,7 +21,7 @@ class SslEnumeration(GenericService, ProcessManager):
         'normal': '-T4',
         'stealth': '-T2',
     }, {
-        'command': 'testssl.sh %(host)s:%(port)s | aha > %(output_dir)s/%(host)s-ssl-%(port)s-testssl.html',
+        'command': 'testssl %(host)s:%(port)s | aha > %(output_dir)s/%(host)s-ssl-%(port)s-testssl.html',
         'normal': '',
         'stealth': '',
     }]

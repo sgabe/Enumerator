@@ -21,7 +21,7 @@ class RdpEnumeration(GenericService, ProcessManager):
         'normal': '-T4',
         'stealth': '-T2',
     }, {
-        'command': 'rdp-sec-check.pl %(host)s:%(port)s --outfile %(output_dir)s/%(host)s-rdp-%(port)s-rdpseccheck.txt',
+        'command': 'rdp-sec-check %(host)s:%(port)s --outfile %(output_dir)s/%(host)s-rdp-%(port)s-rdpseccheck.txt',
         'normal': '',
         'stealth': '',
     }]
