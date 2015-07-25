@@ -7,7 +7,7 @@ enumeration tasks.
 @version: 1.0
 """
 import sys
-from .. import config
+from ..config import Config
 from ..process_manager import ProcessManager
 from ..generic_service import GenericService
 
@@ -40,6 +40,7 @@ class SslEnumeration(GenericService, ProcessManager):
 
         ip = service_parameters.get('ip')
         port = service_parameters.get('port')
+        config = Config().ssl
 
         print '[+] enumerating SSL service on host %s port %s' % (ip, port)
         for process in self.PROCESSES:
@@ -47,7 +48,7 @@ class SslEnumeration(GenericService, ProcessManager):
                 'host': ip,
                 'port': port,
                 'output_dir': directory,
-                'scan_mode': process.get(config.mode),
+                'scan_mode': process.get(config['mode']),
             }, display_exception=False)
 
 if __name__ == '__main__':

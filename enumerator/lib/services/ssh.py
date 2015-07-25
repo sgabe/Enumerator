@@ -8,7 +8,7 @@ enumeration tasks.
 @version: 1.0
 """
 import sys
-from .. import config
+from ..config import Config
 from ..process_manager import ProcessManager
 from ..generic_service import GenericService
 
@@ -42,6 +42,7 @@ class SshEnumeration(GenericService, ProcessManager):
 
         ip = service_parameters.get('ip')
         port = service_parameters.get('port')
+        config = Config().ssh
 
         print '[+] enumerating SSH service on host %s port %s' % (ip, port)
         for process in self.PROCESSES:
@@ -50,7 +51,7 @@ class SshEnumeration(GenericService, ProcessManager):
                 'port': port,
                 'output_dir': directory,
                 'static_path': self.static_path,
-                'scan_mode': process.get(config.mode),
+                'scan_mode': process.get(config['mode']),
             }, display_exception=False)
 
 if __name__ == '__main__':

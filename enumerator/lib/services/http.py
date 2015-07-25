@@ -7,7 +7,7 @@ enumeration tasks.
 @version: 1.0
 """
 import sys
-from .. import config
+from ..config import Config
 from ..process_manager import ProcessManager
 from ..generic_service import GenericService
 
@@ -48,6 +48,7 @@ class HttpEnumeration(GenericService, ProcessManager):
 
         ip = service_parameters.get('ip')
         port = service_parameters.get('port')
+        config = Config().http
 
         print '[+] enumerating HTTP service on host %s port %s' % (ip, port)
         for process in self.PROCESSES:
@@ -57,7 +58,7 @@ class HttpEnumeration(GenericService, ProcessManager):
                 'url': 'https://%s/' % ip if port == '443' else 'http://%s:%s/' % (ip, port),
                 'output_dir': directory,
                 'wordlist': self.DIRB_WORDLISTS,
-                'scan_mode': process.get(config.mode),
+                'scan_mode': process.get(config['mode']),
             }, display_exception=False)
 
 if __name__ == '__main__':

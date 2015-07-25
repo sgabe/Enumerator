@@ -25,7 +25,7 @@ import sys
 import multiprocessing
 from os.path import expanduser
 
-from enumerator.lib import nmap, config
+from enumerator.lib import nmap
 
 if __name__ == '__main__':
     banner='''
@@ -78,9 +78,6 @@ if __name__ == '__main__':
             ip_list = [ip for ip in ip_list if ip != '']
     elif args.single:
         ip_list = [args.single]
-
-    # Set the scan mode config option.
-    config.mode = args.mode
 
     print '[*] IP list parsed, sending hosts to nmap...'
     pool = multiprocessing.Pool(

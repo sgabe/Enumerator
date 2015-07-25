@@ -8,7 +8,7 @@ enumeration tasks.
 @version: 1.0
 """
 import sys
-from .. import config
+from ..config import Config
 from ..process_manager import ProcessManager
 from ..generic_service import GenericService
 
@@ -34,6 +34,7 @@ class RpcEnumeration(GenericService, ProcessManager):
         """
 
         ip = service_parameters.get('ip')
+        config = Config().rpc
 
         print '[+] enumerating RPC service on host %s' % ip
         for process in self.PROCESSES:

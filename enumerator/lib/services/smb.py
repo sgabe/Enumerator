@@ -7,7 +7,7 @@ enumeration tasks.
 @version: 1.0
 """
 import sys
-from .. import config
+from ..config import Config
 from ..process_manager import ProcessManager
 from ..generic_service import GenericService
 
@@ -35,13 +35,14 @@ class SmbEnumeration(GenericService, ProcessManager):
         """
 
         ip = service_parameters.get('ip')
+        config = Config().smb
 
         print '[+] enumerating SMB service on host %s' % ip
         for process in self.PROCESSES:
             self.start_processes(process.get('command'), params={
                 'host': ip,
                 'output_dir': directory,
-                'scan_mode': process.get(config.mode),
+                'scan_mode': process.get(config['mode']),
             }, display_exception=False)
 
     def is_valid_service(self, attributes, services):
