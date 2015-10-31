@@ -32,7 +32,7 @@ class HttpEnumeration(GenericService, ProcessManager):
 
     # TODO: Make these configurable either at runtime or via config file.
     # On the Kali distro, both of these files/paths exist.
-    DIRB_WORDLISTS = '/usr/share/dirb/wordlists/common.txt,/opt/metasploit/apps/pro/msf3/data/wmap/wmap_dirs.txt'
+    DIRB_WORDLISTS = '/usr/share/dirb/wordlists/common.txt,/usr/share/metasploit-framework/data/wmap/wmap_dirs.txt'
 
     def scan(self, directory, service_parameters):
         """Iterates over PROCESSES and builds
