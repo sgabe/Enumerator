@@ -22,6 +22,7 @@ Before using, please ensure that the following tools are installed:
 -  smtp-user-enum (smtp enumeration)
 -  rdp-sec-check (rdp enumeration)
 -  onesixtyone, snmpwalk, snmpcheck (snmp enumeration)
+-  eyewitness (http, rdp and vnc enumeration)
 
 **Windows is NOT supported at this time.**
 
@@ -29,18 +30,18 @@ Available Service Modules
 -------------------------
 
 -  FTP (hydra ftp login enumeration, nmap ftp NSE scripts)
--  HTTP (nikto scan, dirb directory enumeration, nmap http NSE scripts)
+-  HTTP (nikto scan, dirb directory enumeration, nmap http NSE scripts, eyewitness)
 -  Netbios (enum4linux scan)
 -  RPC (showmount output)
 -  SSH (hydra ssh login enumeration, nmap ssh NSE ssh-hostkey
    enumeration)
 -  MySQL (nmap mysql NSE scripts)
--  RDP (rdp-sec-check, nmap rdp NSE encryption enumeration)
+-  RDP (rdp-sec-check, nmap rdp NSE encryption enumeration, eyewitness)
 -  SMB (nmap smb NSE scripts)
 -  SMTP (smtp-user-enum, nmap smtp NSE user enumeration)
 -  SNMP (onesixtyone, snmpwalk, snmpcheck, nmap snmp NSE scripts)
 -  SSL (testssl, nmap ssl NSE scripts)
--  VNC (nmap vnc NSE scripts)
+-  VNC (nmap vnc NSE scripts, eyewitness)
 
 Changelog
 ---------

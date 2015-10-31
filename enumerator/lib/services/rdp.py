@@ -24,6 +24,10 @@ class RdpEnumeration(GenericService, ProcessManager):
         'command': 'rdp-sec-check %(host)s:%(port)s --outfile %(output_dir)s/%(host)s-rdp-%(port)s-rdpseccheck.txt',
         'normal': '',
         'stealth': '',
+    }, {
+        'command': 'EyeWitness --single %(host)s:%(port)s --rdp --no-prompt -t 15 -d %(output_dir)s/eyewitness/%(port)s',
+        'normal': '',
+        'stealth': '',
     }]
 
     def scan(self, directory, service_parameters):

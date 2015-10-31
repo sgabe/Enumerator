@@ -20,6 +20,10 @@ class VncEnumeration(GenericService, ProcessManager):
             -oN %(output_dir)s/%(host)s-vnc-%(port)s-standard.txt %(host)s',
         'normal': '-T4',
         'stealth': '-T2'
+    }, {
+        'command': 'EyeWitness --single %(host)s:%(port)s --vnc --no-prompt -t 15 -d %(output_dir)s/eyewitness/%(port)s',
+        'normal': '',
+        'stealth': '',
     }]
 
     def scan(self, directory, service_parameters):

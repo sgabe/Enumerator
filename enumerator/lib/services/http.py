@@ -28,6 +28,10 @@ class HttpEnumeration(GenericService, ProcessManager):
         'command': 'dirb %(url)s %(wordlist)s -o %(output_dir)s/%(host)s-http-%(port)s-dirb.txt -r -S -w %(scan_mode)s',
         'normal': '',
         'stealth': '-z 400',
+    }, {
+        'command': 'EyeWitness --single %(url)s:%(port)s --web --no-prompt -t 15 -d %(output_dir)s/eyewitness/%(port)s',
+        'normal': '',
+        'stealth': '',
     }]
 
     # TODO: Make these configurable either at runtime or via config file.
