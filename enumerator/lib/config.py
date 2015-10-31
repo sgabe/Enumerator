@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 
+from os import path
 from configobj import ConfigObj
 from configobj import ConfigObjError
 
@@ -11,7 +12,8 @@ class Config(object):
     """
     def __init__(self):
         try:
-            self.config = ConfigObj("../config.ini")
+            filename = path.abspath(path.join(path.dirname(__file__), '..', 'config.ini'))
+            self.config = ConfigObj(filename)
             [setattr(self, section, self.config[section])
              for section in self.config.keys()]
         except (ConfigObjError, IOError), e:
