@@ -29,7 +29,7 @@ class HttpEnumeration(GenericService, ProcessManager):
         'normal': '',
         'stealth': '-z 400',
     }, {
-        'command': 'EyeWitness --single %(url)s:%(port)s --web --no-prompt -t 15 -d %(output_dir)s/eyewitness/%(port)s',
+        'command': 'EyeWitness --single %(url)s:%(port)s --web --no-prompt --timeout 15 -d %(output_dir)s/eyewitness/%(port)s',
         'normal': '',
         'stealth': '',
     }]

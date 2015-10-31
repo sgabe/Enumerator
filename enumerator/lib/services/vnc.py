@@ -21,7 +21,7 @@ class VncEnumeration(GenericService, ProcessManager):
         'normal': '-T4',
         'stealth': '-T2'
     }, {
-        'command': 'EyeWitness --single %(host)s:%(port)s --vnc --no-prompt -t 15 -d %(output_dir)s/eyewitness/%(port)s',
+        'command': 'EyeWitness --single %(host)s:%(port)s --vnc --no-prompt --timeout 15 -d %(output_dir)s/eyewitness/%(port)s',
         'normal': '',
         'stealth': '',
     }]
